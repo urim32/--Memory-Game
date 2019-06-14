@@ -1,181 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Memory Game</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
-    <div class="container header">
-        <div class="row btn">
-            <a href="" class="btn">start play</a>
-        </div>
-        <div class="row time-score">
-            <div class="col-md-6">Time:</div>
-            <div class="col-md-6">Score:</div>
-
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-           <div class="col-md-3">
-                <div class="flip-card">
-                        <div class="flip-card-inner">
-                          <div class="flip-card-front">
-                            <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
-                          </div>
-                          <div class="flip-card-back">
-                            <img src="./images/ca3.jpg" alt="">
-                          </div>
-                        </div>
-                      </div>
-           </div>
-           <div class="col-md-3">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
-                        </div>
-                        <div class="flip-card-back">
-                            <img src="./images/ca2.jpg" alt="cat1">
-                        </div>
-                    </div>
-                </div> 
-           </div>
-           <div class="col-md-3">
-               <div class="flip-card">
-                        <div class="flip-card-inner">
-                          <div class="flip-card-front">
-                            <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
-                          </div>
-                          <div class="flip-card-back">
-                            <img src="./images/ca1.jpg" alt="cat1">
-                          </div>
-                        </div>
-                      </div>
-           </div>
-           <div class="col-md-3">
-                <div class="flip-card">
-                         <div class="flip-card-inner">
-                           <div class="flip-card-front">
-                             <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
-                           </div>
-                           <div class="flip-card-back">
-                             <img src="./images/ca1.jpg" alt="cat1">
-                           </div>
-                         </div>
-                       </div>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Document</title>
+      <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+        <div class="overlay-text">
+            Click to Start
+          </div>
+          <div id="game-over-text" class="overlay-text ">
+            GAME OVER
+            <span class="overlay-text-small">Click to Restart</span>
+          </div>
+          <div id="won-text" class="overlay-text">
+            YOU WON!!!
+            <span class="overlay-text-small">Click to Restart</span>
+          </div>
+        <h1 class="page-title">Memory Game</h1>
+        <div class="game-container">
+            <div class="game-info-container">
+              <div class="game-info">
+                Time: <span id="time-remaining">100</span>
+              </div>
+              <div class="game-info">
+                Flips: <span id="flips">0</span>
+              </div>
             </div>
-        </div>
-        <div class="row">
-                <div class="col-md-3">
-                        <div class="flip-card">
-                                <div class="flip-card-inner">
-                                  <div class="flip-card-front">
-                                    <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
-                                  </div>
-                                  <div class="flip-card-back">
-                                    <img src="./images/ca3.jpg" alt="">
-                                  </div>
-                                </div>
-                              </div>
-                   </div>
-                   <div class="col-md-3">
-                        <div class="flip-card">
-                            <div class="flip-card-inner">
-                                <div class="flip-card-front">
-                                    <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
-                                </div>
-                                <div class="flip-card-back">
-                                    <img src="./images/ca2.jpg" alt="cat1">
-                                </div>
-                            </div>
-                        </div> 
-                   </div>
-                   <div class="col-md-3">
-                       <div class="flip-card">
-                                <div class="flip-card-inner">
-                                  <div class="flip-card-front">
-                                    <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
-                                  </div>
-                                  <div class="flip-card-back">
-                                    <img src="./images/ca1.jpg" alt="cat1">
-                                  </div>
-                                </div>
-                              </div>
-                   </div>
-                   <div class="col-md-3">
-                        <div class="flip-card">
-                                 <div class="flip-card-inner">
-                                   <div class="flip-card-front">
-                                     <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
-                                   </div>
-                                   <div class="flip-card-back">
-                                     <img src="./images/ca1.jpg" alt="cat1">
-                                   </div>
-                                 </div>
-                               </div>
-                    </div>
-        </div>
-        <div class="row">
-                <div class="col-md-3">
-                        <div class="flip-card">
-                                <div class="flip-card-inner">
-                                  <div class="flip-card-front">
-                                    <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
-                                  </div>
-                                  <div class="flip-card-back">
-                                    <img src="./images/ca3.jpg" alt="">
-                                  </div>
-                                </div>
-                              </div>
-                   </div>
-                   <div class="col-md-3">
-                        <div class="flip-card">
-                            <div class="flip-card-inner">
-                                <div class="flip-card-front">
-                                    <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
-                                </div>
-                                <div class="flip-card-back">
-                                    <img src="./images/ca2.jpg" alt="cat1">
-                                </div>
-                            </div>
-                        </div> 
-                   </div>
-                   <div class="col-md-3">
-                       <div class="flip-card">
-                                <div class="flip-card-inner">
-                                  <div class="flip-card-front">
-                                    <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
-                                  </div>
-                                  <div class="flip-card-back">
-                                    <img src="./images/ca1.jpg" alt="cat1">
-                                  </div>
-                                </div>
-                              </div>
-                   </div>
-                   <div class="col-md-3">
-                        <div class="flip-card">
-                                 <div class="flip-card-inner">
-                                   <div class="flip-card-front">
-                                     <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
-                                   </div>
-                                   <div class="flip-card-back">
-                                     <img src="./images/ca1.jpg" alt="cat1">
-                                   </div>
-                                 </div>
-                               </div>
-                    </div>
-        </div>
- 
-    </div>
-
-    </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</body>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <!-- <img src="img_avatar.png" alt="front" > -->
+                  </div>
+                  <div class="flip-card-back">
+                    <img src="./images/ca1.jpg" alt="cat1">
+                  </div>
+                </div>
+              </div>  
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="img_avatar.png" alt="Avatar">
+                  </div>
+                  <div class="flip-card-back">
+                      <img src="./images/ca2.jpg" alt="cat2">
+                  </div>
+                </div>
+              </div>  
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="img_avatar.png" alt="Avatar">
+                  </div>
+                  <div class="flip-card-back">
+                      <img src="./images/ca3.jpg" alt="cat3">
+                  </div>
+                </div>
+              </div>  
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="img_avatar.png" alt="Avatar">
+                  </div>
+                  <div class="flip-card-back">
+                      <img src="./images/ca4.jpg" alt="cat4">
+                  </div>
+                </div>
+              </div>  
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="img_avatar.png" alt="Avatar">
+                  </div>
+                  <div class="flip-card-back">
+                      <img src="./images/ca5.jpg" alt="cat5">
+                  </div>
+                </div>
+              </div>  
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="img_avatar.png" alt="Avatar">
+                  </div>
+                  <div class="flip-card-back">
+                      <img src="./images/ca6.jpg" alt="cat6">
+                  </div>
+                </div>
+              </div>  
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="img_avatar.png" alt="Avatar">
+                  </div>
+                  <div class="flip-card-back">
+                      <img src="./images/ca1.jpg" alt="cat1">
+                  </div>
+                </div>
+              </div>  
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="img_avatar.png" alt="Avatar">
+                  </div>
+                  <div class="flip-card-back">
+                      <img src="./images/ca2.jpg" alt="cat2">
+                  </div>
+                </div>
+              </div>  
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="img_avatar.png" alt="Avatar">
+                  </div>
+                  <div class="flip-card-back">
+                      <img src="./images/ca3.jpg" alt="cat3">
+                  </div>
+                </div>
+              </div>  
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="img_avatar.png" alt="Avatar">
+                  </div>
+                  <div class="flip-card-back">
+                      <img src="./images/ca4.jpg" alt="cat4">
+                  </div>
+                </div>
+              </div>  
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="img_avatar.png" alt="Avatar">
+                  </div>
+                  <div class="flip-card-back">
+                      <img src="./images/ca5.jpg" alt="cat5">
+                  </div>
+                </div>
+              </div>  
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="img_avatar.png" alt="Avatar">
+                  </div>
+                  <div class="flip-card-back">
+                      <img src="./images/ca6.jpg" alt="cat6">
+                  </div>
+                </div>
+              </div>  
+    </body>
 </html>

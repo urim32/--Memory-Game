@@ -1,40 +1,55 @@
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    min-height: 100vh;
+}
+body {
+    background: radial-gradient(#106666, #0a3030);
+}
+.page-title {
+    color: #3dc4c4;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    text-align: center;
+    font-size: 5rem;
 }
 
-.container {
-    border: 2px solid #333;
-}
-
-.container.header .row.btn {
+.game-info-container {
+    grid-column: 1/-1;
     display: flex;
+    justify-content: space-between;
+}
+
+.game-info {
+    font-family: Lunacy, serif;
+    color: #25f0f0;
+    font-size: 2.5em;
+}
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 10px;
+    margin: 50px;
     justify-content: center;
-    align-items: center;
+    perspective: 500px;
 }
-.container.header .col-md-6 {
-    justify-content: flex-end;
-    align-items: center;
-    display: flex;
+.flip-card .flip-card-back img {
+    width: 150;
+    height: 200;
 }
-.row .col-md-4 {
-    /* margin: 20px; */
-}
-
-/* https://www.w3schools.com/howto/howto_css_flip_card.asp */
 
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flip-card {
     background-color: transparent;
-    width: 200px;
+    width: 150px;
     height: 200px;
+    border: 1px solid #f1f1f1;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
-img {
-    width: 200px;
-    height: 200px;
-    margin: 0 auto;
-}
+
 /* This container is needed to position the front and back side */
 .flip-card-inner {
     position: relative;
@@ -70,4 +85,42 @@ img {
     background-color: dodgerblue;
     color: white;
     transform: rotateY(180deg);
+}
+img {
+    width: 150px;
+    height: 200px;
+}
+.overlay-text {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    color: #3dc4c4;
+    font-family: Creepy, serif;
+}
+
+.overlay-text-small {
+    font-size: .3em;
+}
+
+.overlay-text.visible {
+    display: flex;
+    flex-direction: column;
+    animation: overlay-grow 500ms forwards;
+}
+
+@keyframes overlay-grow {
+    from {
+        background-color: rgba(0, 0, 0, 0);
+        font-size: 0;
+    }
+    to {
+        background-color: rgba(0, 0, 0, 0.9);
+        font-size: 7em;
+    }
 }
