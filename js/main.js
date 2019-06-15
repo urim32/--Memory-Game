@@ -1,18 +1,43 @@
 let cards = document.querySelectorAll('.card');
+let time = document.querySelector('#time');
+let flips = document.querySelector('#flips');
+let overlays = document.querySelectorAll('.overlay-text');
+overlays.forEach((overlay) => {
+    overlay.addEventListener('click', () => {
+        overlay.classList.remove('visible');
+        startGame();
+    });
+});
 let card1;
 let card2;
+let totalFlips;
+let countdown;
+let timeRemening;
 let cardFlipped = false;
 let disableCardFlipped = false;
+
 cards.forEach((card) => card.addEventListener('click', flipCard));
-(function shuffleCards() {
+function startGame() {
+    totalFlips = 0;
+    timeRemening = 100;
+    shuffleCards();
+    countdown = setInterval(timeCountDown, 1000);
+
+    // hideCards();
+    time.innerText = timeRemening;
+    flips.innerText = totalFlips;
+}
+function shuffleCards() {
     cards.forEach((card) => {
         let rndNumber = Math.floor(Math.random() * 12);
         card.style.order = rndNumber;
     });
-})();
+}
 function flipCard() {
     if (disableCardFlipped) return;
     if (this === card1) return;
+    totalFlips++;
+    flips.innerText = totalFlips;
     this.classList.add('flip');
     if (!cardFlipped) {
         // first click
@@ -35,6 +60,25 @@ function checkCardMatch() {
             card1.classList.remove('flip');
             card2.classList.remove('flip');
             disableCardFlipped = false;
-        }, 1000);
+        }, 1200);
     }
+}
+function hideCards() {
+    cards.classList.remove('flip');
+}
+function timeCountDown() {
+    timeRemening--;
+    time.innerText = timeRemening;
+    if (timeRemening === 0) {
+        gameOver();
+    }
+}
+
+function gameOver() {
+    clearInterval(countdown);
+    document.getElementById('game-over-text').classList.add('visible');
+}
+function win() {
+    clearInterval(countdown);
+    document.getElementById('win-text').classList.add('visible');
 }
