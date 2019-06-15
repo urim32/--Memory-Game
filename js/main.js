@@ -2,9 +2,11 @@ let cards = document.querySelectorAll('.card');
 let time = document.querySelector('#time');
 let flips = document.querySelector('#flips');
 let overlays = document.querySelectorAll('.overlay-text');
+let matchedArray = [];
 overlays.forEach((overlay) => {
     overlay.addEventListener('click', () => {
         overlay.classList.remove('visible');
+
         startGame();
     });
 });
@@ -22,8 +24,7 @@ function startGame() {
     timeRemening = 100;
     shuffleCards();
     countdown = setInterval(timeCountDown, 1000);
-
-    // hideCards();
+    hideCards();
     time.innerText = timeRemening;
     flips.innerText = totalFlips;
 }
@@ -40,20 +41,26 @@ function flipCard() {
     flips.innerText = totalFlips;
     this.classList.add('flip');
     if (!cardFlipped) {
-        // first click
         cardFlipped = true;
         card1 = this;
     } else {
-        // second click
         cardFlipped = false;
         card2 = this;
         checkCardMatch();
+    }
+}
+function checkIfWin() {
+    if (matchedArray.length === cards.length) {
+        win();
     }
 }
 function checkCardMatch() {
     if (card1.dataset.name === card2.dataset.name) {
         card1.removeEventListener('click', flipCard);
         card2.removeEventListener('click', flipCard);
+        matchedArray.push(card1);
+        matchedArray.push(card2);
+        checkIfWin();
     } else {
         disableCardFlipped = true;
         setTimeout(function() {
@@ -64,7 +71,9 @@ function checkCardMatch() {
     }
 }
 function hideCards() {
-    cards.classList.remove('flip');
+    cards.forEach((card) => {
+        card.classList.remove('flip');
+    });
 }
 function timeCountDown() {
     timeRemening--;
