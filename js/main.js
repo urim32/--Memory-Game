@@ -18,10 +18,12 @@ let timeRemening;
 let cardFlipped = false;
 let disableCardFlipped = false;
 
-cards.forEach((card) => card.addEventListener('click', flipCard));
 function startGame() {
+    cards.forEach((card) => card.addEventListener('click', flipCard));
+
+    matchedArray = [];
     totalFlips = 0;
-    timeRemening = 100;
+    timeRemening = 80;
     shuffleCards();
     countdown = setInterval(timeCountDown, 1000);
     hideCards();
