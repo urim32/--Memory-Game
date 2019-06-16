@@ -1,142 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>Document</title>
-      <link rel="stylesheet" href="./css/style.css">
-    </head>
-    <body>
-        <div class="overlay-text visible">
-            Click to Start
-          </div>
-          <div id="game-over-text" class="overlay-text ">
-            GAME OVER
-            <span class="overlay-text-small">Click to Restart</span>
-          </div>
-          <div id="win-text" class="overlay-text">
-            YOU WON!!!
-            <span class="overlay-text-small">Click to Restart</span>
-          </div>
-        <h1 class="page-title">Memory Game</h1>
-        <div class="game-container">
-            <div class="game-info-container">
-              <div class="game-info">
-                Time: <span id="time">80</span>
-              </div>
-              <div class="game-info">
-                Flips: <span id="flips">0</span>
-              </div>
-            </div>
-            <div class="card" data-name="cat1">
-                <div class="card-inner">
-                  <div class="card-front">
-                  </div>
-                  <div class="card-back">
-                    <img src="./images/ca1.jpg" alt="cat1">
-                  </div>
-                </div>
-              </div>  
-            <div class="card" data-name="cat2">
-                <div class="card-inner">
-                  <div class="card-front">
-                  </div>
-                  <div class="card-back">
-                      <img src="./images/ca2.jpg" alt="cat2">
-                  </div>
-                </div>
-              </div>  
-            <div class="card" data-name="cat3">
-                <div class="card-inner">
-                  <div class="card-front">
-                  </div>
-                  <div class="card-back">
-                      <img src="./images/ca3.jpg" alt="cat3">
-                  </div>
-                </div>
-              </div>  
-            <div class="card" data-name="cat4">
-                <div class="card-inner">
-                  <div class="card-front">
-                  </div>
-                  <div class="card-back">
-                      <img src="./images/ca4.jpg" alt="cat4">
-                  </div>
-                </div>
-              </div>  
-            <div class="card" data-name="cat5">
-                <div class="card-inner">
-                  <div class="card-front">
-                  </div>
-                  <div class="card-back">
-                      <img src="./images/ca5.jpg" alt="cat5">
-                  </div>
-                </div>
-              </div>  
-            <div class="card" data-name="cat6">
-                <div class="card-inner">
-                  <div class="card-front">
-                  </div>
-                  <div class="card-back">
-                      <img src="./images/ca6.jpg" alt="cat6">
-                  </div>
-                </div>
-              </div>  
-            <div class="card" data-name="cat1">
-                <div class="card-inner">
-                  <div class="card-front">
-                  </div>
-                  <div class="card-back">
-                      <img src="./images/ca1.jpg" alt="cat1">
-                  </div>
-                </div>
-              </div>  
-            <div class="card" data-name="cat2">
-                <div class="card-inner">
-                  <div class="card-front">
-                  </div>
-                  <div class="card-back">
-                      <img src="./images/ca2.jpg" alt="cat2">
-                  </div>
-                </div>
-              </div>  
-            <div class="card" data-name="cat3">
-                <div class="card-inner">
-                  <div class="card-front">
-                  </div>
-                  <div class="card-back">
-                      <img src="./images/ca3.jpg" alt="cat3">
-                  </div>
-                </div>
-              </div>  
-            <div class="card" data-name="cat4">
-                <div class="card-inner">
-                  <div class="card-front">
-                  </div>
-                  <div class="card-back">
-                      <img src="./images/ca4.jpg" alt="cat4">
-                  </div>
-                </div>
-              </div>  
-            <div class="card" data-name="cat5">
-                <div class="card-inner">
-                  <div class="card-front">
-                  </div>
-                  <div class="card-back">
-                      <img src="./images/ca5.jpg" alt="cat5">
-                  </div>
-                </div>
-              </div>  
-            <div class="card" data-name="cat6">
-                <div class="card-inner">
-                  <div class="card-front">
-                  </div>
-                  <div class="card-back">
-                      <img src="./images/ca6.jpg" alt="cat6">
-                  </div>
-                </div>
-              </div> 
-        <script src="./js/main.js"></script>
-    </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <div class="overlay-text visible">
+    Click to Start
+  </div>
+  <div id="game-over-text" class="overlay-text ">
+    GAME OVER
+    <span class="overlay-text-small">Click to Restart</span>
+  </div>
+  <div id="win-text" class="overlay-text">
+    YOU WON!!!
+    <span class="overlay-text-small">Click to Restart</span>
+  </div>
+  <h1 class="page-title">Memory Game</h1>
+  <div class="game-container">
+    <div class="game-info-container">
+      <div class="game-info">
+        Time: <span id="time">80</span>
+      </div>
+      <div class="game-info">
+        Flips: <span id="flips">0</span>
+      </div>
+    </div>
+    <div class="card" data-name="cat1">
+      <div class="card-inner">
+        <div class="card-front">
+        </div>
+        <div class="card-back">
+          <img src="./images/ca1.jpg" alt="cat1">
+        </div>
+      </div>
+    </div>
+    <div class="card" data-name="cat2">
+      <div class="card-inner">
+        <div class="card-front">
+        </div>
+        <div class="card-back">
+          <img src="./images/ca2.jpg" alt="cat2">
+        </div>
+      </div>
+    </div>
+    <div class="card" data-name="cat3">
+      <div class="card-inner">
+        <div class="card-front">
+        </div>
+        <div class="card-back">
+          <img src="./images/ca3.jpg" alt="cat3">
+        </div>
+      </div>
+    </div>
+    <div class="card" data-name="cat4">
+      <div class="card-inner">
+        <div class="card-front">
+        </div>
+        <div class="card-back">
+          <img src="./images/ca4.jpg" alt="cat4">
+        </div>
+      </div>
+    </div>
+    <div class="card" data-name="cat5">
+      <div class="card-inner">
+        <div class="card-front">
+        </div>
+        <div class="card-back">
+          <img src="./images/ca5.jpg" alt="cat5">
+        </div>
+      </div>
+    </div>
+    <div class="card" data-name="cat6">
+      <div class="card-inner">
+        <div class="card-front">
+        </div>
+        <div class="card-back">
+          <img src="./images/ca6.jpg" alt="cat6">
+        </div>
+      </div>
+    </div>
+    <div class="card" data-name="cat1">
+      <div class="card-inner">
+        <div class="card-front">
+        </div>
+        <div class="card-back">
+          <img src="./images/ca1.jpg" alt="cat1">
+        </div>
+      </div>
+    </div>
+    <div class="card" data-name="cat2">
+      <div class="card-inner">
+        <div class="card-front">
+        </div>
+        <div class="card-back">
+          <img src="./images/ca2.jpg" alt="cat2">
+        </div>
+      </div>
+    </div>
+    <div class="card" data-name="cat3">
+      <div class="card-inner">
+        <div class="card-front">
+        </div>
+        <div class="card-back">
+          <img src="./images/ca3.jpg" alt="cat3">
+        </div>
+      </div>
+    </div>
+    <div class="card" data-name="cat4">
+      <div class="card-inner">
+        <div class="card-front">
+        </div>
+        <div class="card-back">
+          <img src="./images/ca4.jpg" alt="cat4">
+        </div>
+      </div>
+    </div>
+    <div class="card" data-name="cat5">
+      <div class="card-inner">
+        <div class="card-front">
+        </div>
+        <div class="card-back">
+          <img src="./images/ca5.jpg" alt="cat5">
+        </div>
+      </div>
+    </div>
+    <div class="card" data-name="cat6">
+      <div class="card-inner">
+        <div class="card-front">
+        </div>
+        <div class="card-back">
+          <img src="./images/ca6.jpg" alt="cat6">
+        </div>
+      </div>
+    </div>
+    <script src="./js/main.js"></script>
+</body>
+
 </html>

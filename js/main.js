@@ -1,4 +1,21 @@
+class Game {
+    constructor() {}
+    startGame() {
+        cards.forEach((card) => card.addEventListener('click', flipCard));
+
+        matchedArray = [];
+        totalFlips = 0;
+        timeRemening = 80;
+        shuffleCards();
+        countdown = setInterval(timeCountDown, 1000);
+        hideCards();
+        time.innerText = timeRemening;
+        flips.innerText = totalFlips;
+    }
+}
+
 let cards = document.querySelectorAll('.card');
+
 let time = document.querySelector('#time');
 let flips = document.querySelector('#flips');
 let overlays = document.querySelectorAll('.overlay-text');
@@ -18,24 +35,13 @@ let timeRemening;
 let cardFlipped = false;
 let disableCardFlipped = false;
 
-function startGame() {
-    cards.forEach((card) => card.addEventListener('click', flipCard));
-
-    matchedArray = [];
-    totalFlips = 0;
-    timeRemening = 80;
-    shuffleCards();
-    countdown = setInterval(timeCountDown, 1000);
-    hideCards();
-    time.innerText = timeRemening;
-    flips.innerText = totalFlips;
-}
 function shuffleCards() {
     cards.forEach((card) => {
         let rndNumber = Math.floor(Math.random() * 12);
         card.style.order = rndNumber;
     });
 }
+
 function flipCard() {
     if (disableCardFlipped) return;
     if (this === card1) return;
@@ -51,11 +57,13 @@ function flipCard() {
         checkCardMatch();
     }
 }
+
 function checkIfWin() {
     if (matchedArray.length === cards.length) {
         win();
     }
 }
+
 function checkCardMatch() {
     if (card1.dataset.name === card2.dataset.name) {
         card1.removeEventListener('click', flipCard);
@@ -65,18 +73,20 @@ function checkCardMatch() {
         checkIfWin();
     } else {
         disableCardFlipped = true;
-        setTimeout(function() {
+        setTimeout(function () {
             card1.classList.remove('flip');
             card2.classList.remove('flip');
             disableCardFlipped = false;
         }, 1200);
     }
 }
+
 function hideCards() {
     cards.forEach((card) => {
         card.classList.remove('flip');
     });
 }
+
 function timeCountDown() {
     timeRemening--;
     time.innerText = timeRemening;
@@ -89,6 +99,7 @@ function gameOver() {
     clearInterval(countdown);
     document.getElementById('game-over-text').classList.add('visible');
 }
+
 function win() {
     clearInterval(countdown);
     document.getElementById('win-text').classList.add('visible');
