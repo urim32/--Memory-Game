@@ -33,16 +33,16 @@ body {
     perspective: 500px;
     margin: 40px;
 }
-.card .card-back img {
+/* .card .card-back img {
     width: 150;
     height: 200;
-}
+} */
 
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .card {
     background-color: transparent;
-    width: 100px;
-    height: 150px;
+    width: 130px;
+    height: 180px;
     border: 1px solid #f1f1f1;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
@@ -73,7 +73,7 @@ body {
 
 /* Style the front side (fallback if image is missing) */
 .card-front {
-    background-color: #bbb;
+    background-color: #bb9090;
     color: black;
 }
 
@@ -84,8 +84,8 @@ body {
     transform: rotateY(180deg);
 }
 img {
-    width: 100px;
-    height: 150px;
+    width: 130px;
+    height: 180px;
 }
 .overlay-text {
     display: none;
@@ -117,7 +117,7 @@ img {
     }
     to {
         background-color: rgba(0, 0, 0, 0.9);
-        font-size: 7em;
+        font-size: 5rem;
     }
 }
 
@@ -141,6 +141,14 @@ img {
             font-size: 2rem;
         }
     }
+    img {
+        width: 100px;
+        height: 150px;
+    }
+    .card {
+        width: 100px;
+        height: 150px;
+    }
 }
 @media (max-width: 790px) {
     .page-title {
@@ -155,5 +163,13 @@ img {
             background-color: rgba(0, 0, 0, 0.7);
             font-size: 3rem;
         }
+    }
+    img {
+        width: 120px;
+        height: 170px;
+    }
+    .card {
+        width: 120px;
+        height: 170px;
     }
 }
