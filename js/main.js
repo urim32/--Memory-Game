@@ -1,19 +1,3 @@
-class Game {
-    constructor() {}
-    startGame() {
-        cards.forEach((card) => card.addEventListener('click', flipCard));
-
-        matchedArray = [];
-        totalFlips = 0;
-        timeRemening = 80;
-        shuffleCards();
-        countdown = setInterval(timeCountDown, 1000);
-        hideCards();
-        time.innerText = timeRemening;
-        flips.innerText = totalFlips;
-    }
-}
-
 let cards = document.querySelectorAll('.card');
 
 let time = document.querySelector('#time');
@@ -34,6 +18,20 @@ let countdown;
 let timeRemening;
 let cardFlipped = false;
 let disableCardFlipped = false;
+
+function startGame() {
+    cards.forEach((card) => card.addEventListener('click', flipCard));
+
+    matchedArray = [];
+    totalFlips = 0;
+    timeRemening = 80;
+    shuffleCards();
+    countdown = setInterval(timeCountDown, 1000);
+    hideCards();
+    time.innerText = timeRemening;
+    flips.innerText = totalFlips;
+}
+
 
 function shuffleCards() {
     cards.forEach((card) => {
